@@ -238,6 +238,80 @@
                 transform: translateY(0);
             }
         }
+
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--card-bg);
+            border-top: 1px solid #ccc;
+            display: none;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .message-input {
+            position: fixed;
+            bottom: 50px;
+            /* height of .mobile-nav */
+            left: 0;
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            display: flex;
+            gap: 10px;
+            z-index: 1001;
+            /* Ensure above everything */
+        }
+
+        .message-input {
+            position: fixed;
+            bottom: 50px;
+            /* height of .mobile-nav */
+            left: 0;
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            display: flex;
+            gap: 10px;
+            z-index: 1001;
+            /* Ensure above everything */
+        }
+
+        @media (max-width: 768px) {
+            .chat-container {
+                flex-direction: column;
+                height: 100vh;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: calc(100vh - 60px - 50px);
+                /* Top bar + mobile nav */
+            }
+
+            .main-chat {
+                width: 100%;
+                height: calc(100vh - 60px - 50px);
+                /* Top bar + mobile nav */
+                display: none;
+                flex-direction: column;
+            }
+
+            .chat-messages {
+                flex: 1;
+                overflow-y: auto;
+                padding-bottom: 60px;
+                /* prevent overlapping with message input */
+            }
+
+            .mobile-nav {
+                display: flex;
+            }
+        }
     </style>
 </head>
 
